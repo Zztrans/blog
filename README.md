@@ -1,4 +1,4 @@
-# blogResource
+# blogSource
 
 dependency
 
@@ -6,4 +6,4 @@ dependency
 
 theme 
 
-> hugo-theme-stack# blogSource
+> hugo-theme-stack

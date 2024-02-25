@@ -25,7 +25,7 @@ lastmod:
 
 <!-- 同步发表于[我的博客](https://zztrans.github.io/p/hackergame2022/) -->
 
-{{% notice tip 提示%}}
+{{% notice warning 提示%}}
 未特别标注的源代码采用 [知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议](http://creativecommons.org/licenses/by-nc-sa/4.0/) 进行许可
 {{% /notice %}}
 
@@ -342,7 +342,7 @@ if __name__ == '__main__':
 
 带交互的见下题，只贴了运算部分
 
-{{% spoiler "代码" %}}
+{{% spoiler 代码 %}}
 
 ```python
     from gmpy2 import invert
@@ -451,7 +451,7 @@ if __name__ == '__main__':
 
 贴个主要的代码
 
-{{% spoiler "代码" %}}
+{{% spoiler 代码 %}}
 
 ```python
 def chal(bitlength, obf):

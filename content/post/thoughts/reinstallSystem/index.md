@@ -6,7 +6,7 @@ date: 2023-03-16T19:20:39+08:00
 image: img.jpg
 math: true
 comments: true
-tags: [心情, 流水]
+tags: [心情, 流水, OS]
 categories: thoughts
 lastmod: 
 ---
