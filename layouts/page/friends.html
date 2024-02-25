@@ -1,0 +1,41 @@
+{{ define "body-class" }}article-page{{ end }}
+{{ define "main" }}
+<h2 class="section-title">friends</h2>
+<div class="friends-container">
+    {{ range .Site.Data.friends.friend }}
+    {{ $avatar := resources.Get (.avatar) }}
+    {{ if not $avatar }}
+    {{ $avatar = (resources.GetRemote (.avatar)) }}
+    {{ $avatar = resources.Copy (printf "img/%v%v" (lower .name) (path.Ext $avatar)) $avatar }}
+    {{ end }}
+
+    <a class="friends-list" href="{{ .url }}" target="_blank">
+
+        <div class=friend-avatar>
+        {{ if $avatar }}
+            {{ $avatarResized := $avatar.Resize "300x" }}
+            <img src="{{ $avatarResized.RelPermalink }}" width="{{ $avatarResized.Width }}"
+                height="{{ $avatarResized.Height }}" class="friend-avatar-img" loading="lazy" alt="{{ .name }}">
+        {{ else }}
+            {{ errorf "Failed loading avatar from %q" . }}
+        {{ end }}
+        </div>
+        <div class="friend-info">
+            <h2 class="friend-name">
+                {{ .name }}
+            </h2>
+            <p class="friend-desc">
+                {{ .desc }}
+            </p>
+        </div>
+    </a>
+
+    {{ end }} 
+</div>
+<article class="main-article">
+    <section class="article-content">
+        {{ .Content }}
+    </section>
+</article>
+{{ partialCached "footer/footer" . }}
+{{ end }}

@@ -1,0 +1,9 @@
+*.exe
+*.test
+
+public
+themes
+resources
+
+assets/jsconfig.json
+.DS_Store

@@ -1,0 +1,12 @@
+---
+title: "{{ replace . Name "-" " " | title }}"
+slug: "{{ replace . Name "-" " " | title }}"
+description: 
+date: {{ . Date }}
+image: 
+math: true
+comments: true
+tags: [心情, 流水, 游记]
+categories: tutorial/thoughts
+lastmod: {{ . Date }}
+---
