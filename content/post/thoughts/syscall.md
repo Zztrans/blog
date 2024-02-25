@@ -19,16 +19,18 @@ draft: true
 
 这篇 [文章 ](http://arkanis.de/weblog/2017-01-05-measurements-of-system-call-performance-and-overhead)，作者使用各种不同的 cpu 硬件平台，编程设置了 benchmark 测试了一些 syscall 的性能开销。
 
-如 getpid() 
+如 getpid() (glibc < 2.25, getpid() is no longer cached by glibc starting with 2.25.)
 
 使用 vDSO(virtual Dynamic Shared Object) 相比普通的 syscall instruction 形式会快很多，非常接近普通函数的调用开销。
+
+但评论似乎也有人说是 glibc cacheing 的功劳？？？
 
 {{% notice tip vDSO%}}
 和 vsyscall 类似，都是一种系统调用加速机制。
 
 将部分内核中 syscall 对应的地址空间通过 `动态共享库 (.so)` 直接映射到用户空间。
 
-暴露的系统调用不多，据 [文章](https://tinylab.org/riscv-syscall-part3-vdso-overview/) 有 gettimeofday，clock_gettime 等。
+vDSO 暴露的系统调用不多，进一步介绍可以在 [文章](https://tinylab.org/riscv-syscall-part3-vdso-overview/) 中找到，是平台而不同的。
 {{% /notice %}}
 
 `ldd  /bin/bash` 可以看到 ELF 链接的共享库情况，其中就有 vDSO，同时可以发现有 ASLR 机制。
