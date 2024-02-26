@@ -8,6 +8,10 @@ math: true
 comments: true
 tags: [心情, 流水, 游记]
 categories: tutorial/thoughts
-lastmod: {{ . Date }}
+lastmod: 
 draft: true
 ---
+
+## 前言
+
+## 结束语

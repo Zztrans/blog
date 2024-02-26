@@ -1,5 +1,5 @@
 ---
-title: "restart blog？"
+title: "restart blog？("
 slug: "HugoReuse"
 description: 
 date: 2024-02-25T21:11:12+08:00
@@ -9,11 +9,12 @@ comments: true
 tags: [随笔]
 categories: thoughts
 lastmod: 
+draft: false
 ---
 
 ## 前言
 
-研二上学期自己配置了主机，第一次拥有自己 diy 的丝滑主机。
+在上学期自己配置了主机，第一次拥有自己 diy 的丝滑主机。
 
 由于价格的透明，主机 diy 过就知道其实很好自己装一套高性价比的，不至于成为 "整机烈士"？
 
@@ -35,7 +36,6 @@ lastmod:
 
 根据 [论坛](https://discourse.gohugo.io/t/a-cautionary-tale-mixing-windows-and-wsl-windows-subsystem-for-linux/17896/11) 的见解
 
-
 {{% notice note Note%}}
 
 Filesystem change/watch events (what hugo serve looks for with fsnotify) are low-level and OS-specific, and it seems WSL does not yet provide the same kind of environment/functionality for it’s Windows files into the Linux kernel (yet).
@@ -48,9 +48,14 @@ hugo 用了 [fsnotify](https://github.com/fsnotify/fsnotify)。
 
 解决方法就是将文件真的放在 wsl 里。
 
-
 ### 字符乱码
 
 在我的原来的 win 系统中的 文件 path 文件名中存在中文，直接复制迁移到 wsl 上乱码。
 
 原来是 windows 默认使用 UTF-16 编码来存储文件名，linux 当然是 UTF-8 了，中文字符可能在上面会出现差异。
+
+## 结束语
+
+再把 hg23 的 wp 放上来，之后图片估计都懒得找了。
+
+在 vscode 中做了一些 hugo shortcode 的 snippet 定义便利写作，还有装 markdown 中英文间的 padding 和 format 之类的扩展，似乎就重启完了？(

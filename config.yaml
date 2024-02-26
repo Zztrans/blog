@@ -2,7 +2,7 @@ baseurl: https://zztrans.github.io/
 languageCode: en-us
 theme: hugo-theme-stack
 paginate: 5
-title: Zztrans
+title: zztrans
 
 
 languages:
@@ -56,7 +56,7 @@ params:
 
     sidebar:
         emoji: 👨‍🍳
-        subtitle: Small, stupid humans. It's like our whole deal.
+        subtitle: Want to geek more?
         avatar:
             enabled: true
             local: true
