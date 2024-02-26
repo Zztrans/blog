@@ -15,7 +15,10 @@ comments: false
 ---
 
 - 👋 Hi, I’m @Zztrans
-- 👀 I’m interested in LOL, ACG, algorithm competition, football and so on.
-- 🌱 I’m currently learning security-related, multimodality-related topic.
-- 💞️ I’m looking to collaborate on touching fish.
-- 📫 Reach me via email: zztrans666txdy@gmail.com.
+- 👀 I’m interested in ACG, CTF, algorithm competition, football, and so on.
+- 🌱 I’m currently researching in security-related, multimodality-related topics.
+- 💞️ Project I'm trying to follow
+- [YSOS: a RUST x86_64 OS lab](https://github.com/YatSenOS/YatSenOS-Tutorial-Volume-2).
+- [OJ-lab](https://github.com/OJ-lab).
+- 📫 Reach me via email: enp0cmFuczY2NnR4ZHlAZ21haWwuY29t.
+
