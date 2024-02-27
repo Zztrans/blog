@@ -1,5 +1,5 @@
 ---
-title: "Hackergame2022个人Writeup"
+title: "Hackergame2022Writeup"
 slug: hg2022
 description: 学到许多！
 date: 2022-10-31T19:25:39+08:00
