@@ -1,4 +1,4 @@
-# blogSource
+# blog
 
 dependency
 
@@ -6,7 +6,7 @@ dependency
 
 theme 
 
-> hugo-theme-stack
+> hugo-theme-stack v3@414a991
 
 ## usage
 
