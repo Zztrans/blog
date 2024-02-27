@@ -1,5 +1,5 @@
 ---
-title: "restart blog？("
+title: "Restart Blog？("
 slug: "HugoReuse"
 description: 
 date: 2024-02-25T21:11:12+08:00
@@ -14,9 +14,11 @@ draft: false
 
 ## 前言
 
-在上学期自己配置了主机，第一次拥有自己 diy 的丝滑主机。
+在上学期自己配置了主机，第一次拥有 diy 的丝滑主机。
 
-由于价格的透明，主机 diy 过就知道其实很好自己装一套高性价比的，不至于成为 "整机烈士"？
+{{% notice warning Warning%}}
+由于价格的透明， diy 不至于成为 "整机烈士"？
+{{% /notice %}}
 
 这也导致原来的笔记本一直闲置，几乎没有使用场景。
 
@@ -54,8 +56,28 @@ hugo 用了 [fsnotify](https://github.com/fsnotify/fsnotify)。
 
 原来是 windows 默认使用 UTF-16 编码来存储文件名，linux 当然是 UTF-8 了，中文字符可能在上面会出现差异。
 
+## 优化 workflow？
+
+之前是把 hugo 生成 public 放一个 repo。然后现在希望把 source 也放一个 repo，这样每次生成后都要 git 操作两个 repo，非常的麻烦。
+
+显然可以通过某种途径来便利部署，github page workflow 和 Cloudflare Page？采用了后者。
+
+只要你 repo 里本身能正常运行，Cloudflare Page 能提供一些站点编译构建的工具环境，自动生成并部署。
+
+正好自己有个域名没有用过。
+{{% notice tip 花絮%}}
+买了域名不用不愧是我，就像买的服务器好像现在也没啥用了(
+{{% /notice %}}
+
+> 从购买服务的 registrar 将 CNAME 记录导出给 Cloudflare。(似乎是可选的)
+> 
+> 按照后续说明，在你的 DNS registrar 那边把 NS 记录转成 Cloudflare 提供的。
+> 
+> 同时做了 www，和子域的 CNAME 记录。
+
 ## 结束语
 
-再把 hg23 的 wp 放上来，之后图片估计都懒得找了。
+再把 hg23 的 wp 放上来，之后一些好看的图片估计都懒得找了。
 
 在 vscode 中做了一些 hugo shortcode 的 snippet 定义便利写作，还有装 markdown 中英文间的 padding 和 format 之类的扩展，似乎就重启完了？(
+

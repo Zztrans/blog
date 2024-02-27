@@ -1,8 +1,12 @@
 # blog
 
-dependency
+Currently I'm using [Cloudflare Page](https://developers.cloudflare.com/pages/framework-guides/deploy-a-hugo-site/) for deployment.
 
-> hugo extend v104.3
+See in [Blog](zztrans.top).
+
+## Dependency
+
+> hugo extend v104.3 (higher is ok, but extend is needed maybe)
 
 theme 
 
@@ -22,14 +26,13 @@ hot deploy to localhost
 
 ## shortcode
 
-Some shortcode to be use for some fancy render.
+Some shortcode in `markdown` for some fancy render. Thanks to [cuberlcsl](https://github.com/cubercsl).
 
-in ./layous/shortcodes/
-
-example:
+Example:
 
 ```markdown
 {{% notice warning diywords %}}
 
 {{% /notice %}}
 ```
+

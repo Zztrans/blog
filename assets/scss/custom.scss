@@ -1,0 +1,10 @@
+/* Place your custom SCSS in HUGO_SITE_FOLDER/assets/scss/custom.scss */
+@import "partials/friends.scss";
+@import "partials/details.scss";
+@import "partials/notice.scss";
+
+
+// Do not use uppercase in article-lastmod
+.main-article .article-footer section.article-lastmod {
+    text-transform: none;
+}

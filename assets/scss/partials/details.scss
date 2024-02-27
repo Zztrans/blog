@@ -1,0 +1,37 @@
+details {
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    padding: 0.5em 0.5em 0;
+    margin: 0.5em auto;
+}
+
+summary {
+    font-weight: bold;
+    margin: -0.5em -0.5em 0;
+    padding: 0.5em;
+}
+
+details[open] {
+    padding: 0.5em;
+    summary {
+        border-bottom: 1px solid #aaa;
+        margin-bottom: 0.5em;
+    }
+}
+
+details[open],
+.notice {
+    /// Negative margins
+    blockquote,
+    figure,
+    .highlight,
+    pre,
+    .gallery,
+    .video-wrapper,
+    .table-wrapper,
+    .s_video_simple {
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
+    }
+}
