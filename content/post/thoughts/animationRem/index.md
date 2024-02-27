@@ -2,7 +2,6 @@
 title: "想记得看过的番"
 slug: A-memory
 description: 你会记得你迄今为止吃过多少片面包吗？
-draft: true
 date: 2023-04-24T19:20:39+08:00
 image: img.jpg
 math: true
@@ -10,6 +9,7 @@ comments: true
 tags: [心情]
 categories: thoughts
 lastmod: 
+draft: true
 ---
 
 {{% notice tip 引言 %}}

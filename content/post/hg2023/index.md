@@ -2,7 +2,7 @@
 title: "hackergame2023个人Writeup"
 slug: hg2023
 description: 又学到许多？
-date: 2024-02-26T15:44:23+08:00
+date: 2023-11-06T15:44:23+08:00
 image: 
 math: true
 comments: true

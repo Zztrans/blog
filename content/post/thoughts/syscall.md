@@ -8,12 +8,12 @@ license:
 hidden: false
 comments: true
 tags: [OS]
-draft: true
+draft: false
 ---
 
 读了几篇 syscall 相关的文章，做了一些总结。
 
-用户编写的程序使用到的 fun 基于用户态库，经历 app -> lib -> syscall -> kernel 的调用链，最终交给 kernel mode 做一些关键的事情。
+用户编写的程序使用到的 function 基于用户态库，经历 app -> lib -> syscall -> kernel 的调用链，最终交给 kernel mode 做一些关键的事情。
 
 ## performance
 
