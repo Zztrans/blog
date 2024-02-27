@@ -2,7 +2,7 @@
 
 Currently I'm using [Cloudflare Page](https://developers.cloudflare.com/pages/framework-guides/deploy-a-hugo-site/) for deployment.
 
-See in [Blog](zztrans.top).
+See in [Blog](https://zztrans.top).
 
 ## Dependency
 
@@ -16,23 +16,29 @@ theme
 
 build to ./public
 
-> hugo 
+```shell
+hugo 
+```
 
 hot deploy to localhost
 
-> hugo server 
+```shell
+hugo server 
+```
 
 -D for draft 
 
 ## shortcode
 
-Some shortcode in `markdown` for some fancy render. Thanks to [cuberlcsl](https://github.com/cubercsl).
+Some shortcode in `markdown` for fancy viwriting. 
+
+Great thanks to [cubercsl](https://github.com/cubercsl).
 
 Example:
 
 ```markdown
 {{% notice warning diywords %}}
-
+content
 {{% /notice %}}
 ```
 
