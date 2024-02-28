@@ -30,7 +30,7 @@ hugo server
 
 ## shortcode
 
-Some shortcode in `markdown` for fancy viwriting. 
+Some shortcode in `markdown` for flex writing. 
 
 Great thanks to [cubercsl](https://github.com/cubercsl).
 

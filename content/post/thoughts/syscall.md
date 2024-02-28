@@ -1,5 +1,6 @@
 ---
 title: "Syscall"
+slug: "syscall"
 description: 
 date: 2024-02-25T23:22:23+08:00
 image: 
@@ -7,13 +8,20 @@ math:
 license: 
 hidden: false
 comments: true
+categories: thoughts
 tags: [心情, 流水, OS]
-draft: true
+draft: false
 ---
+
+## 前言
 
 读了几篇 syscall 相关的文章，做了一些总结。
 
 用户编写的程序基于用户态库，经历 app -> lib -> syscall -> kernel 的调用链，最终交给 kernel mode 做一些关键的事情。
+
+{{% notice note Note%}}
+The end goal of writing a kernel is to get to userspace, or, in other words, going from ring 0 to ring 3.
+{{% /notice %}}
 
 ## performance
 
@@ -38,3 +46,4 @@ vDSO 暴露的系统调用不多，进一步介绍可以在 [文章](https://tin
 fread() 和 fwrite()会比 read() write() 快 8 倍？从 file stream 中进行 IO 操作非常快。
 
 而 vDSO 对 read()，write()几乎没有提升。
+

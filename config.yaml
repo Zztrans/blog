@@ -15,7 +15,7 @@ languages:
     #     weight: 1
     zh-cn:
         languageName: 中文
-        title: Zztrans
+        title: Zztrans's blog
         weight: 2
     # ar:
     #     languageName: عربي
@@ -46,7 +46,7 @@ params:
         - post
     featuredImageField: image
     rssFullContent: true
-    favicon:  /img/flower_16px.png
+    favicon: /avatar_16.jpg
     # e.g.: favicon placed in `static/favicon.ico` of your site folder, then set this field to `/favicon.ico` (`/` is necessary)
 
     footer:
