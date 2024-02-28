@@ -1,6 +1,6 @@
 ---
 title: "Syscall"
-slug: "syscall"
+slug: syscall
 description: 
 date: 2024-02-25T23:22:23+08:00
 image: 
@@ -8,7 +8,7 @@ math:
 license: 
 hidden: false
 comments: true
-categories: thoughts
+categories: note
 tags: [心情, 流水, OS]
 draft: false
 ---

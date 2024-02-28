@@ -1,6 +1,6 @@
 ---
 title: "Restart Blog？("
-slug: "restart"
+slug: restart
 description: 
 date: 2024-02-25T21:11:12+08:00
 image: 
