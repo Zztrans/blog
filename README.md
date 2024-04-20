@@ -17,13 +17,13 @@ theme
 build to ./public
 
 ```shell
-hugo 
+hugo
 ```
 
 hot deploy to localhost
 
 ```shell
-hugo server 
+hugo server
 ```
 
 -D for draft 

@@ -13,7 +13,7 @@ lastmod:
 
 # 前言
 
-从去年 [hackergame22](https://zztrans.github.io/p/hg2022/) 入门，零散打过几个比赛，对一些套路总算是有一些经验了。
+从去年 [hackergame22](https://blog.zztrans.top/p/hg2022/) 入门，零散打过几个比赛，对一些套路总算是有一些经验了。
 
 今年参与 hackgame23 的程度似乎又更甚了，又学到了很多新东西，总之还是非常好玩！
 
