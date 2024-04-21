@@ -10,14 +10,14 @@ links:
   #   description: GitHub is the world's largest software development platform.
   #   website: https://github.com
   #   image: https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png
-  - title: csl's blog
+  - title: CSL 讲废话
     description: The end is always near.
     website: https://blog.cubercsl.site/
     image: https://blog.cubercsl.site/avatar.png
   - title: compute's blog
     description: 说正事时唯唯诺诺，说废话时重拳出击
     website: https://akamya.moe/
-    image: https://userpic.codeforces.com/759780/title/4dc813b5e460f47a.jpg
+    image: https://avatars.githubusercontent.com/u/44839751
   - title: Lemon's blog
     description: lemon!
     website: https://lemon-412.github.io/
@@ -29,11 +29,11 @@ links:
   - title: Plalyy
     description: yygg!
     website: https://plalyy.github.io/
-    image: https://avatars.githubusercontent.com/u/53925465?v=4
+    image: https://avatars.githubusercontent.com/u/53925465
   - title: LotusIR
     description: LotusIR!
     website: https://lotusir.cc/
-    image: https://avatars.githubusercontent.com/u/52376751?v=4
+    image: https://avatars.githubusercontent.com/u/52376751
 
 menu:
     main: 
