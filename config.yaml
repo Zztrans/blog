@@ -2,7 +2,7 @@ module:
   imports:
   - path: github.com/CaiJimmy/hugo-theme-stack/v3
 
-baseurl: https://zztrans.github.io/
+baseurl: https://blog.zztrans.top/
 languageCode: en-us
 paginate: 5
 title: zztrans
@@ -27,7 +27,7 @@ languages:
 disqusShortname: hugo-theme-stack
 
 # GA Tracking ID
-googleAnalytics:
+googleAnalytics: G-WJPH6TNHFL
 
 # Theme i18n support
 # Available values: ar, bn, ca, de, el, en, es, fr, hu, id, it, ja, ko, nl, pt-br, th, uk, zh-cn, zh-hk, zh-tw
@@ -59,7 +59,7 @@ params:
 
     sidebar:
         emoji: 👨‍🍳
-        subtitle: Want to geek more?
+        subtitle: Want to geek more? 🙃
         avatar:
             enabled: true
             local: true
@@ -85,7 +85,7 @@ params:
             adminLabel:
 
         utterances:
-            repo: Zztrans/Zztrans.github.io
+            repo: Zztrans/blog
             theme: github-light
             issueTerm: pathname
             label:
@@ -244,5 +244,3 @@ markup:
         
 frontmatter:
   lastmod: :fileModTime
-
-googleAnalytics: G-WJPH6TNHFL
