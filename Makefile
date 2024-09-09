@@ -1,4 +1,3 @@
-
 .PHONY: run
 run:
 	hugo server -D -p 12345

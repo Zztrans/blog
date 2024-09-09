@@ -7,7 +7,7 @@ image:
 math: true
 comments: true
 tags: [心情, 流水, 游记]
-categories: tutorial/thoughts
+categories: note | tutorial | thoughts
 lastmod: 
 draft: true
 ---
