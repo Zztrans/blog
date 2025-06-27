@@ -26,7 +26,15 @@ hot deploy to localhost
 hugo server
 ```
 
--D for draft 
+-D for show draft also 
+
+new content:
+
+```shell
+hugo new post/xxx
+```
+
+search order: [hugo](https://gohugo.io/content-management/archetypes/)
 
 ## shortcode
 

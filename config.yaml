@@ -46,7 +46,7 @@ params:
         - post
     featuredImageField: image
     rssFullContent: true
-    favicon: /avatar_16.jpg
+    favicon: /avatar_16.png
     # e.g.: favicon placed in `static/favicon.ico` of your site folder, then set this field to `/favicon.ico` (`/` is necessary)
 
     footer:
@@ -63,7 +63,7 @@ params:
         avatar:
             enabled: true
             local: true
-            src: img/avatar.jpg
+            src: img/avatar.png
 
     article:
         math: true
