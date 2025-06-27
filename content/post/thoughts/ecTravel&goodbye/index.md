@@ -4,7 +4,7 @@ tags: [心情, 流水, 游记]
 categories: thoughts
 mathjax: true
 date: 2022-07-21 21:46:46
-slug: acmgoodbye
+slug: acm-goodbye
 image: img.jpg
 math: true
 license: 
