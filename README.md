@@ -31,7 +31,7 @@ hugo server
 new content:
 
 ```shell
-hugo new post/xxx
+hugo new post/xxx.md
 ```
 
 search order: [hugo](https://gohugo.io/content-management/archetypes/)
@@ -49,4 +49,53 @@ Example:
 content
 {{% /notice %}}
 ```
+包含以下几种：
 
+```json
+"tip": {
+    "prefix": "tip",
+    "body": [
+        "{{% notice tip Tip%}}"
+        "$0"
+        "{{% /notice %}}"
+    ],
+    "description": "green"
+},
+
+"info": {
+    "prefix": "info",
+    "body": [
+        "{{% notice info Info%}}"
+        "$0"
+        "{{% /notice %}}"
+    ],
+    "description": "yellow"
+},
+"warning": {
+    "prefix": "warning",
+    "body": [
+        "{{% notice warning Warning%}}"
+        "$0"
+        "{{% /notice %}}"
+    ],
+    "description": "red"
+},
+"note": {
+    "prefix": "note",
+    "body": [
+        "{{% notice note Note%}}"
+        "$0"
+        "{{% /notice %}}"
+    ],
+    "description": "blue"
+},
+"spoiler": {
+    "prefix": "spoiler",
+    "body": [
+        "{{% spoiler 代码 %}}"
+        "$0"
+        "{{% /spoiler %}}"
+    ],
+    "description": "code"
+}
+```
