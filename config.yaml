@@ -4,7 +4,10 @@ module:
 
 baseurl: https://blog.zztrans.top/
 languageCode: en-us
-paginate: 5
+
+pagination:
+    pagerSize: 5
+
 title: zztrans
 
 
