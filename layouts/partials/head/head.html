@@ -21,7 +21,7 @@
     <link rel="shortcut icon" href="{{ . }}" />
 {{ end }}
 
-{{- if not hugo.IsServer }}
+{{- if not hugo.IsDevelopment }}
     {{ template "_internal/google_analytics_async.html" . }}
 {{- end }}
 
