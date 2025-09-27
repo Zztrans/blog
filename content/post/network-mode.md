@@ -21,7 +21,6 @@ draft:
 据说 gemini cli 免费，于是想在我的 WSL2 上配一下。
 
 
-
 装完 gemini 会遇到登录 auth 失败的情况，似乎是 gemini 这里在 WSL 起了个 服务，有个 callback URL要访问。
 
 本来我的 WSL2 使用的是 NAT 模式，有开一个 localhostForwarding 的选项。
@@ -82,5 +81,9 @@ dnsTunneling=true
 
 autoProxy=true
 
-都开了会更丝滑吗？还要实验
+都开了会更丝滑吗？
+
+{{% notice tip Tip%}}
+确实是，wsl2 能无缝继承 win 的代理配置，各种场景下都很方便。
+{{% /notice %}}
 
