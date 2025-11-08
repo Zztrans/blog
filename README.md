@@ -6,7 +6,7 @@ See in [Blog](https://zztrans.top).
 
 ## Dependency
 
-> hugo extend v104.3+ (higher is ok, but extend is needed maybe)
+> hugo extend v104.3+ (higher is ok, but extend is needed)
 > eg: hugo v0.148.2+extended+withdeploy linux/amd64 BuildDate=unknown
 
 theme 
