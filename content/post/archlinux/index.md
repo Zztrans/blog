@@ -30,7 +30,7 @@ draft:
 
 让 AI 帮我理了一张图
 
-![概念层级](concept.jpg)
+![concept](concept.jpg)
 
 桌面环境：
 KDE Plasma
@@ -47,7 +47,7 @@ fcitx5
 
 ![系统信息](sysinfo.png)
 
-可以每时每刻设备的状态
+可以监控每时每刻设备的状态
 
 ![设备监控](monitor.png)
 
