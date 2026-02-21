@@ -91,11 +91,11 @@ During the process of symbol resolution using static libraries, linker scans the
 
 运行时加载 (loader: execve(初始化进程的状态机) + mmap 映射进程虚拟地址到文件上，只映射不加载，读写时才缺页中断去真正处理) 的 动态库、动态链接库文件
 
-加载 -> segment 
+加载 -> segment
 
-一个 segment 内包含很多的 section，一段一段 被加载进 地址空间
+一个 segment 内包含很多的 section, 一段一段 被加载进 地址空间
 
-生成：
+如何生成：
 ```shell
 gcc -shared -fPIC -o libfoo.so a.o b.o(a.c 源文件也可以)
 ```
