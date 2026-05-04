@@ -77,9 +77,9 @@ Windows 上的网络接口“镜像”到 Linux。
 
 实际访问谁都是相互的，共用一套 localhost。
 
-dnsTunneling=true
+> dnsTunneling=true # Linux 里的 DNS 请求不再发给一个虚拟的网关 IP，而是给 win
 
-autoProxy=true
+> autoProxy=true # 同步 Windows 代理设置
 
 都开了会更丝滑吗？
 

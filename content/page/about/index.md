@@ -1,6 +1,6 @@
 ---
 title: About
-description: A graduate from sysu
+description: 
 date: '2022-10-07'
 aliases:
 license: false

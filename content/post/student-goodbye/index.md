@@ -9,7 +9,7 @@ comments: true
 tags: [心情]
 categories: thoughts
 lastmod: 
-draft: 
+draft: true
 ---
 
 学生时代终于告一段落，相比本科结束时的激动，现在似乎有一些麻木和钝感。
