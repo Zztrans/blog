@@ -1,0 +1,9 @@
+{
+    "Hugo Figure Shortcode": {
+        "prefix": "figure",
+        "body": [
+            "{{< figure src=\"$1\" caption=\"$2\" >}}"
+        ],
+        "description": "Insert a Hugo figure shortcode with src and caption"
+    }
+}

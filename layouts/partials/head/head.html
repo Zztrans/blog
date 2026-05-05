@@ -18,7 +18,12 @@
 {{- end -}}
 
 {{ with .Site.Params.favicon }}
-    <link rel="shortcut icon" href="{{ . }}" />
+    {{- $favicon := resources.Get . -}}
+    {{- if $favicon -}}
+        <link rel="shortcut icon" href="{{ $favicon.RelPermalink }}" />
+    {{- else -}}
+        <link rel="shortcut icon" href="{{ . }}" />
+    {{- end -}}
 {{ end }}
 
 {{- if not hugo.IsDevelopment }}
