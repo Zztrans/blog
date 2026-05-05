@@ -1,15 +1,14 @@
 ---
 title: "{{ replace .Name "-" " " | title }}"
-slug: "{{ replace .Name "-" " " | title }}"
-description: 
+slug: {{ index (split .File.Dir "/") 2 }}
 date: {{ .Date }}
+description: 
 image: 
 math: true
 comments: true
-tags: [心情, 流水, 游记]
-categories: note | tutorial | thoughts
-lastmod: 
-draft: true
+tags: []
+categories: 
+    - {{ index (split .File.Dir "/") 1 }}
 ---
 
 ## 前言
