@@ -1,6 +1,6 @@
 ---
 title: "ELF simple concept"
-slug: "OSconcept"
+slug: "elf-concept"
 description: 
 date: 2024-09-08T23:44:23+08:00
 image: 
