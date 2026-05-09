@@ -108,7 +108,7 @@ params:
 
         # Waline client configuration see: https://waline.js.org/en/reference/component.html
         waline:
-            serverURL: https://blog-waline-server-7qgtj88mk-zztrans-projects.vercel.app/
+            serverURL: https://blog-waline-server-alpha.vercel.app/
             lang:
             pageview: true
             emoji:
