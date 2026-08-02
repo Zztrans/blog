@@ -1,5 +1,5 @@
 ---
-title: "ELF simple concept"
+title: "ELF concept"
 slug: "elf-concept"
 description: 
 date: 2024-09-08T23:44:23+08:00
@@ -11,114 +11,98 @@ categories: note
 lastmod: 
 ---
 
-## ELF
+## ELF 概述
 
-ELF(Executable and Linkable Format, 可执行与可链接格式)，一种高级语言代码的二进制表示标准。
+**ELF** (Executable and Linkable Format, 可执行与可链接格式) 是一种为高级语言代码和数据提供的标准二进制表示格式。
 
-分类大概包含以下几类， 可重定位文件，共享库文件，可执行文件，都可以称作 ELF。
+常见的 ELF 文件可以分为三类：**可重定位文件**（`.o`）、**共享目标文件**（`.so`）以及**可执行文件**。
 
-文件内容上主要包括下面几部分：
+ELF 文件在设计上具有**双重特性**，它在编译链接期和运行加载期呈现出两种不同的视图：
 
-- ELF header
+- **ELF header**：描述文件的总体结构和元数据（如魔数、体系结构、入口地址等）。
+- **链接视图 (Linking View)**：以 **Section（节）** 为单位。提供给链接器 (Linker) 使用的 Section Header Table。链接器将不同目标文件中相同类型的 section 进行解析和合并。
+- **执行视图 (Execution View)**：以 **Segment（段）** 为单位。提供给加载器 (Loader / OS Kernel) 使用的 Program Header Table。加载器会将多个权限相似的 section 映射成一个 segment（例如将代码段和只读数据段合并映射为只读且可执行的内存区域），以方便运行时加载。
 
-- section header table -> 链接的概念 section，为链接器提供信息，解析确定找到对应的符号
+## 核心文件类型详解
 
-- program header table -> 加载的概念 segment，告诉加载器或者 OS kernel 运行时怎么加载
+### 1. 可重定位文件 (Relocatable Files)
 
-## 可重定位文件
+通常为 `.o` 后缀文件，是源文件编译汇编后的中间产物。
+它包含了代码和数据，但其中的地址是未决的（通常从 0 开始计），需要与其他目标文件合并、重定位才能真正运行。
 
-常见 .o 后缀，可以认为是原生 naive 版？
+经典的 Section 包括：
+- `.text`: 编译后的机器码，代码段
+- `.rodata`: 只读数据，如 `printf` 的格式化字符串常量
+- `.data`: 已初始化的全局/静态变量
+- `.bss`: 未初始化（或初始化为 0）的全局/静态变量（不占实际磁盘空间，只记录大小）
+- `.symtab`: 符号表，记录了函数名、全局变量等符号信息
+- `.debug`: 调试信息
 
-生成方式：
+{{% spoiler "生成可重定位文件演示" %}}
 ```shell
 gcc -c main.c
 ```
+*这会生成 `main.o`。*
+{{% /spoiler %}}
 
-作用于编译期，可以与源文件和其他文件一起重新编译 链接(linker: 常见 ld)。
+### 2. 共享目标文件 (Shared Objects)
 
-链接 -> section
+通常为 `.so` 后缀文件（Windows 下称为 DLL）。
+它是一种特殊的可重定位文件，但主要作用于**运行时或加载时**。编译时通常生成**位置无关代码** (Position Independent Code, PIC)，即内部调用多使用相对地址。
 
-链接详细做了什么：
+运行一个程序时，操作系统的加载器 (`execve`) 会初始化进程状态机，利用 `mmap` 将进程的虚拟地址映射到对应的 ELF 文件上（初始时只映射不加载，触发缺页中断时才真正读入物理内存）。动态库被映射进内存后，可以被多个不同的进程共享，从而节省物理内存空间。
 
-1. 重定位，把多个目标文件，同类 section 合并。
-2. 多个目标文件，符号解析，能找到对应的代码是哪个的。
-
-链接完也能生成一个可执行文件。但是基于的是编译期，各种 object files 的重新整合。
-
-静态链接方式：
+{{% spoiler "共享目标文件与动态链接演示" %}}
+**1. 生成共享目标文件**
 ```shell
-gcc foo.o bar.o /usr/lib/libc.a /usr/lib/libm.a
+gcc -shared -fPIC -o libfoo.so a.o b.o
 ```
-这里链接了两个静态库
+*或者直接用源文件：`gcc -shared -fPIC -o libfoo.so a.c b.c`。*
 
-{{% notice note Linker 静态链接%}}
-
-算法上做了什么？
-
-首先符号解析
-
-During the process of symbol resolution using static libraries, linker scans the relocatable object files and archives from left to right as input on the command line. 更多细节参见参考文献
-
-其次，合并 同类型 sections，分配运行时地址
-
-最后，重新分配 section 内符号解析的对应地址。
-
-{{% /notice %}}
-
-
-经典的 section
-
-.text: 机器码，代码段
-.rodata: 只读数据，如 print 的串
-.data: 已初始化的全局变量
-.bss: 未初始化的
-.symtab: 函数名符号，全局变量符号
-.debug: 调试信息
-
-
-{{% notice warning 静态链接缺点%}}
-使得 ELF 臃肿，对内存，对 disk 存储都浪费。
-
-比如 50 个程序都用 printf，运行时内存上，和存储都冗余很多。   
-
-{{% /notice %}}
-
-## 共享库文件
-
-常见 .so 后缀，win 下叫 DLL
-
-一种特殊的可重定位文件？ 作用于加载时或者说运行时。
-
-运行时加载 (loader: execve(初始化进程的状态机) + mmap 映射进程虚拟地址到文件上，只映射不加载，读写时才缺页中断去真正处理) 的 动态库、动态链接库文件
-
-加载 -> segment
-
-一个 segment 内包含很多的 section, 一段一段 被加载进 地址空间
-
-如何生成：
-```shell
-gcc -shared -fPIC -o libfoo.so a.o b.o(a.c 源文件也可以)
-```
-
--fPIC 表示生成位置无关的代码，即内部使用的都是相对地址
-
-上述命令表示 让 linker 生成一个 libfoo.so，由 a.o b.o 组成
-
-使用：
-
+**2. 链接动态库生成可执行文件**
 ```shell
 gcc bar.o ./libfoo.so
 ```
-假设 bar.o 依赖 a.o， b.o，可以如上操作，让 动态链接器 linker 创建一个 a.out，a.out 本身并不含 a.o，b.o，只含有一些重定位和符号引用信息，能让你在运行时找到。
+*生成的可执行文件并不包含 `libfoo.so` 中的指令，只含有一些重定位和符号引用信息，留待运行时处理。*
 
-可以使用 `ldd` 查看动态链接情况
+**3. 查看动态链接情况**
+```shell
+ldd a.out
+```
+{{% /spoiler %}}
 
-## 可执行文件
+### 3. 可执行文件 (Executable Files)
 
-有 entry 入口，通常是 __start，是一个初始的指令地址，是链接器从标准库帮你统一处理加的一段初始化函数，之后才会跳到编写的 main。
+经过静态或动态链接后，所有符号地址已确定，生成可以被系统直接运行的文件。
+可执行文件拥有一个**入口点 (Entry point)**，通常名为 `_start`。这是链接器从标准库加入的一段初始化指令，用于设置进程环境，完成初始化之后才会跳转到我们编写的 `main` 函数。
 
-实现将从 disk 的可执行文件，到进内存中的进程的状态机。
+
+
+## 链接原理简述
+
+链接器（Linker，常见如 `ld`）主要将可重定位文件组合在一起，其核心步骤如下：
+
+{{% notice note "Linker 静态链接核心步骤" %}}
+1. **符号解析 (Symbol Resolution)**：链接器从左至右扫描命令行输入的重定位文件和静态库（`.a`）。将代码中的每个符号引用与其确切的定义进行绑定（更多细节参见参考文献）。
+2. **重定位 (Relocation)**：合并多个目标文件中的同类型 sections，为它们分配运行时的绝对内存地址；随后，修改代码段 and 数据段中对符号的引用，使其指向这些新的物理地址。
+
+{{% spoiler "静态链接演示" %}}
+```shell
+gcc foo.o bar.o /usr/lib/libc.a /usr/lib/libm.a
+```
+*手动链接了 C 标准库和数学库的静态版本。*
+{{% /spoiler %}}
+{{% /notice %}}
+
+{{% notice warning "静态链接的缺点" %}}
+静态链接会将静态库中的代码直接拷贝到最终的可执行文件中，这使得最终的 ELF 文件变得非常臃肿，造成磁盘和内存的浪费。
+例如：如果系统里有 50 个程序都使用了 `printf` 函数，使用静态链接的话，这 50 个程序的执行文件中都会冗余包含一份 `printf` 的机器指令副本。
+{{% /notice %}}
+
+而**动态链接**则解决了这一问题，它将链接过程推迟到加载时甚至是运行时进行，使得像 `libc` 这样的库在内存中只需保留一份。
+
+---
 
 ## 参考文献
 
-[Linkers and Loaders](https://www.linuxjournal.com/article/6463)
+- [Linkers and Loaders](https://www.linuxjournal.com/article/6463)

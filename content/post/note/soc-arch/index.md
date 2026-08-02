@@ -14,10 +14,12 @@ categories:
 ## 前言
 
 
-看了[极客湾新视频](https://www.bilibili.com/video/BV1F7T46wEyT/)，对于 soc (System on Chip)芯片级别的 架构、优化、涉及到的技术指标，还是一定学习价值的，整理一下。
+看了[极客湾新视频](https://www.bilibili.com/video/BV1F7T46wEyT/)，对于 soc (System on Chip)，以及芯片级别的 架构、优化、涉及到的技术指标，觉得还算有趣，遂整理此文。
 
 {{% notice info 为啥叫soc%}}
-它根本不是一个单纯的处理器，而是一个把整台计算机的“核心器官”全部打包塞进一块指甲盖大小的硅片里的“微型系统”。
+soc不是一个单纯的处理器，而是一个把整台计算机的“核心器官”全部打包塞进一块指甲盖大小的硅片里的“微型系统”。
+
+即一系列芯片的集成体。
 {{% /notice %}}
 
 ![soc](image-3.png)
