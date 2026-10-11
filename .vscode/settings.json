@@ -3,7 +3,7 @@
   "markdown.editor.paste.copyIntoWorkspace": "mediaFiles",
   "markdown.editor.drop.copyIntoWorkspace": "mediaFiles",
   "markdown.copyFiles.destination": {
-    "/content/**": "${documentDir}/${fileName}"
+    "**/*": "${documentDirName}/"
   },
   "pasteImage.path": "${currentFileDir}",
   "pasteImage.basePath": "${currentFileDir}",
