@@ -62,7 +62,7 @@ params:
 
     sidebar:
         emoji: 👨‍🍳
-        subtitle: 有点意思
+        subtitle: 人生的旋转木马
         avatar:
             enabled: true
             local: true

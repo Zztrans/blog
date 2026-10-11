@@ -1,9 +1,86 @@
 {
-    "Hugo Figure Shortcode": {
-        "prefix": "figure",
-        "body": [
-            "{{< figure src=\"$1\" caption=\"$2\" >}}"
-        ],
-        "description": "Insert a Hugo figure shortcode with src and caption"
-    }
+  "Notice Note": {
+    "prefix": ["note", "notice-note"],
+    "body": [
+      "{{% notice note \"${1:Note}\" %}}",
+      "$0",
+      "{{% /notice %}}"
+    ],
+    "description": "Hugo Notice Note (Blue)"
+  },
+  "Notice Tip": {
+    "prefix": ["tip", "notice-tip"],
+    "body": [
+      "{{% notice tip \"${1:Tip}\" %}}",
+      "$0",
+      "{{% /notice %}}"
+    ],
+    "description": "Hugo Notice Tip (Green)"
+  },
+  "Notice Warning": {
+    "prefix": ["warn", "warning", "notice-warning"],
+    "body": [
+      "{{% notice warning \"${1:Warning}\" %}}",
+      "$0",
+      "{{% /notice %}}"
+    ],
+    "description": "Hugo Notice Warning (Red)"
+  },
+  "Notice Info": {
+    "prefix": ["info", "notice-info"],
+    "body": [
+      "{{% notice info \"${1:Info}\" %}}",
+      "$0",
+      "{{% /notice %}}"
+    ],
+    "description": "Hugo Notice Info (Yellow)"
+  },
+  "Spoiler Details": {
+    "prefix": ["spoiler", "spoil", "details"],
+    "body": [
+      "{{% spoiler \"${1:点击展开}\" %}}",
+      "$0",
+      "{{% /spoiler %}}"
+    ],
+    "description": "Hugo Spoiler / Collapsible block"
+  },
+  "Mermaid Diagram": {
+    "prefix": "mermaid",
+    "body": [
+      "```mermaid",
+      "graph ${1|TD,LR,TB,BT|}",
+      "    ${2:A} --> ${3:B}",
+      "$0",
+      "```"
+    ],
+    "description": "Insert a Mermaid diagram block"
+  },
+  "Hugo Figure Shortcode": {
+    "prefix": "figure",
+    "body": [
+      "{{< figure src=\"${1:image.png}\" caption=\"${2:说明}\" >}}"
+    ],
+    "description": "Insert a Hugo figure shortcode with src and caption"
+  },
+  "Markdown Image with Caption": {
+    "prefix": ["img", "image"],
+    "body": [
+      "![${1:caption}](${2:image.png})"
+    ],
+    "description": "Insert Markdown image with caption (rendered as figure)"
+  },
+  "Markdown Link": {
+    "prefix": ["link", "url", "a"],
+    "body": [
+      "[${1:text}](${2:${CLIPBOARD:https://}})"
+    ],
+    "description": "Insert Markdown link (auto-fills from clipboard if available)"
+  },
+  "Hugo Internal Post Link": {
+    "prefix": ["reflink", "postlink"],
+    "body": [
+      "[${1:文章标题}]({{< relref \"${2:post/category/slug}\" >}})"
+    ],
+    "description": "Hugo Internal Article Link (relref)"
+  }
 }

@@ -1,0 +1,21 @@
+{
+  "markdown.editor.pasteUrlAsFormattedLink.enabled": "smartWithSelection",
+  "markdown.editor.paste.copyIntoWorkspace": "mediaFiles",
+  "markdown.editor.drop.copyIntoWorkspace": "mediaFiles",
+  "markdown.copyFiles.destination": {
+    "/content/**": "${documentDir}/${fileName}"
+  },
+  "pasteImage.path": "${currentFileDir}",
+  "pasteImage.basePath": "${currentFileDir}",
+  "pasteImage.defaultName": "image",
+  "pasteImage.insertPattern": "![](${imageFilePath})",
+  "[markdown]": {
+    "editor.wordWrap": "on",
+    "editor.quickSuggestions": {
+      "other": "on",
+      "comments": "off",
+      "strings": "on"
+    },
+    "editor.snippetSuggestions": "top"
+  }
+}
