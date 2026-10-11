@@ -8,3 +8,16 @@
 .main-article .article-footer section.article-lastmod {
     text-transform: none;
 }
+
+// Remove dark masks/overlays on tile cards (Archives categories & Related posts)
+.article-list--tile article.has-image .article-details,
+.related-content article.has-image .article-details {
+    background: none !important;
+    background-color: transparent !important;
+}
+
+.article-list--tile article.has-image .article-title,
+.related-content article.has-image .article-title {
+    color: #fff;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.75), 0 0 2px rgba(0, 0, 0, 0.5);
+}
